@@ -35,6 +35,7 @@
             this.SearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.YellowBorder = new System.Windows.Forms.PictureBox();
             this.Cover_Panel = new System.Windows.Forms.Panel();
+            this.Donate_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             this.Search_Filter_Button.FlatAppearance.BorderSize = 0;
             this.Search_Filter_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Search_Filter_Button.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_Filter_Button.Location = new System.Drawing.Point(944, 59);
+            this.Search_Filter_Button.Location = new System.Drawing.Point(847, 59);
             this.Search_Filter_Button.Name = "Search_Filter_Button";
             this.Search_Filter_Button.Size = new System.Drawing.Size(105, 35);
             this.Search_Filter_Button.TabIndex = 1;
@@ -97,7 +98,7 @@
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(740, 67);
+            this.SearchTextBox.Location = new System.Drawing.Point(643, 67);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(198, 20);
             this.SearchTextBox.TabIndex = 5;
@@ -119,11 +120,27 @@
             this.Cover_Panel.Size = new System.Drawing.Size(1064, 666);
             this.Cover_Panel.TabIndex = 6;
             // 
+            // Donate_Button
+            // 
+            this.Donate_Button.BackColor = System.Drawing.Color.Yellow;
+            this.Donate_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Donate_Button.FlatAppearance.BorderSize = 0;
+            this.Donate_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Donate_Button.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Donate_Button.Location = new System.Drawing.Point(958, 59);
+            this.Donate_Button.Name = "Donate_Button";
+            this.Donate_Button.Size = new System.Drawing.Size(105, 35);
+            this.Donate_Button.TabIndex = 7;
+            this.Donate_Button.Text = "Donate";
+            this.Donate_Button.UseVisualStyleBackColor = false;
+            this.Donate_Button.Click += new System.EventHandler(this.Donate_Button_Click);
+            // 
             // mainFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 791);
+            this.Controls.Add(this.Donate_Button);
             this.Controls.Add(this.Cover_Panel);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.Title_Label);
@@ -152,6 +169,7 @@
         private System.Windows.Forms.Label Title_Label;
         private System.Windows.Forms.MaskedTextBox SearchTextBox;
         private System.Windows.Forms.Panel Cover_Panel;
+        private System.Windows.Forms.Button Donate_Button;
     }
 }
 

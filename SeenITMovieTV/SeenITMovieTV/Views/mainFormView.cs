@@ -167,5 +167,10 @@ namespace SeenITMovieTV
                 ucMovieTVList[i].BackColor = Color.Yellow;
             }
         }
+
+        private void Donate_Button_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("BTC: 1DdK7DvLwpk48e1EXfQpKw3zumxXsu5HqD");
+        }
     }
 }
