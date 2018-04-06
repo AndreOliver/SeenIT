@@ -1,0 +1,54 @@
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.mainFormView.resources
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.exe.config
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.exe
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.pdb
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\MetroFramework.dll
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Properties.Resources.resources
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csproj.CoreCompileInputs.cache
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.exe
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.pdb
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.exe.config
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.exe
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.pdb
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\MetroFramework.dll
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.mainFormView.resources
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Properties.Resources.resources
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csproj.CoreCompileInputs.cache
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.exe
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.pdb
+C:\Users\Aaron\Desktop\SeenIT Backup\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.ucMovieTVThumbnailBoxGroup.resources
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.ucThumbnailBox.resources
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.exe.config
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.exe
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\SeenITMovieTV.pdb
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\MetroFramework.dll
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.ucThumbnailBox.resources
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.mainFormView.resources
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Properties.Resources.resources
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Views.MovieSeriesSummaryFormView.resources
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csproj.GenerateResource.Cache
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csproj.CoreCompileInputs.cache
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.exe
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.pdb
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Views.MovieSeriesSummaryFormView.resources
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.UserControls.ucMovieSeriesInfo.resources
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Views.ProfileView.resources
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.UserControls.ucMovieSeriesInfo.resources
+C:\Users\Aaron\Desktop\Backup - SeenIT\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Views.ProfileView.resources
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\Database\SeenITDatabase.mdf
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\Debug\Database\SeenITDatabase_log.ldf
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.csprojResolveAssemblyReference.cache
+C:\Users\Aaron\Desktop\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\Debug\SeenITMovieTV.Views.LogInView.resources
