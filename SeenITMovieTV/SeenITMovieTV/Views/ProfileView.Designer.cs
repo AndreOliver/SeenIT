@@ -41,6 +41,8 @@
             this.Highest_Rated_Title_Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Watched_Panel_Title_Label_Ignore = new System.Windows.Forms.Label();
+            this.SearchWatchedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.Search_Watched_Filter_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Highest_Rated_PicBox)).BeginInit();
             this.SuspendLayout();
@@ -183,11 +185,35 @@
             this.Watched_Panel_Title_Label_Ignore.TabIndex = 24;
             this.Watched_Panel_Title_Label_Ignore.Text = "Your Watched Movies";
             // 
+            // SearchWatchedTextBox
+            // 
+            this.SearchWatchedTextBox.Location = new System.Drawing.Point(752, 67);
+            this.SearchWatchedTextBox.Name = "SearchWatchedTextBox";
+            this.SearchWatchedTextBox.Size = new System.Drawing.Size(198, 20);
+            this.SearchWatchedTextBox.TabIndex = 26;
+            // 
+            // Search_Watched_Filter_Button
+            // 
+            this.Search_Watched_Filter_Button.BackColor = System.Drawing.Color.Yellow;
+            this.Search_Watched_Filter_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Search_Watched_Filter_Button.FlatAppearance.BorderSize = 0;
+            this.Search_Watched_Filter_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Search_Watched_Filter_Button.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_Watched_Filter_Button.Location = new System.Drawing.Point(956, 59);
+            this.Search_Watched_Filter_Button.Name = "Search_Watched_Filter_Button";
+            this.Search_Watched_Filter_Button.Size = new System.Drawing.Size(105, 35);
+            this.Search_Watched_Filter_Button.TabIndex = 25;
+            this.Search_Watched_Filter_Button.Text = "Search";
+            this.Search_Watched_Filter_Button.UseVisualStyleBackColor = false;
+            this.Search_Watched_Filter_Button.Click += new System.EventHandler(this.Search_Watched_Filter_Button_Click);
+            // 
             // ProfileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 774);
+            this.Controls.Add(this.SearchWatchedTextBox);
+            this.Controls.Add(this.Search_Watched_Filter_Button);
             this.Controls.Add(this.Watched_Panel_Title_Label_Ignore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Highest_Rated_Title_Label);
@@ -230,5 +256,7 @@
         private System.Windows.Forms.Label Highest_Rated_Title_Label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Watched_Panel_Title_Label_Ignore;
+        private System.Windows.Forms.MaskedTextBox SearchWatchedTextBox;
+        private System.Windows.Forms.Button Search_Watched_Filter_Button;
     }
 }

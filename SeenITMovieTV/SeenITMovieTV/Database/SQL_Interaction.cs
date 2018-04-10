@@ -121,7 +121,7 @@ namespace SeenITMovieTV.Database
                         while (reader.Read())
                         {
                             //Store all of the information we need in the list.
-                            if (ListCounter >= SizeOfDataFound)
+                            if (ListCounter >= SizeOfDataFound || ListCounter > 99)
                                 break;
                             tempInfo[ListCounter].Name = reader.GetString(0);
                             tempInfo[ListCounter].IMDBLink = reader.GetString(1);

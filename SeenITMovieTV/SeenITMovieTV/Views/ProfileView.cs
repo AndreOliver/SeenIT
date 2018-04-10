@@ -27,8 +27,8 @@ namespace SeenITMovieTV.Views
 
             InitializeComponent();
 
-            Initialise_ThumbnailUC();
-            Initialise_Display();
+            InitialiseThumbnailUC();
+            InitialiseDisplay();
             InitialiseProfile();           
         }
 
@@ -98,7 +98,7 @@ namespace SeenITMovieTV.Views
 
         private void UpdateThumbnails()
         {
-            
+            //Set the for loop size by checking the count. We do this so that we dont go out of bounds reading the array.
             SizeOfMovieTVList = AllMoviesOrSeriesList.Count;
 
             //Check we can look through the list without null exceptions.
@@ -121,7 +121,36 @@ namespace SeenITMovieTV.Views
             }
         }
 
-        private void Initialise_Display()
+        /// <summary>
+        /// Overloaded method to use a specific list instead of the default global one.
+        /// </summary>
+        /// <param name="ListToUpdateWith"></param>
+        private void UpdateThumbnails(List<MovieTVInformation> ListToUpdateWith)
+        {
+            //Set the for loop size by checking the count. We do this so that we dont go out of bounds reading the array.
+            SizeOfMovieTVList = ListToUpdateWith.Count;
+
+            //Check we can look through the list without null exceptions.
+            if (SizeOfMovieTVList != 0)
+            {
+                //Enable the display and show user all movies / series found.
+                for (int i = 0; i < SizeOfMovieTVList; i++)
+                {
+                    ucWatchedMovieTVList[i].Visible = true;
+                    ucWatchedMovieTVList[i].Enabled = true;
+
+                    if (AllMoviesOrSeriesList[i].Name != String.Empty)
+                    {
+                        ucWatchedMovieTVList[i].Thumbnail_Name = ListToUpdateWith[i].Name;
+                        ucWatchedMovieTVList[i].Thumbnail_Image_Location = ListToUpdateWith[i].CoverPictureLink;
+                        ucWatchedMovieTVList[i].IMDB_Link = ListToUpdateWith[i].IMDBLink;
+                        ucWatchedMovieTVList[i].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    }
+                }
+            }
+        }
+
+        private void InitialiseDisplay()
         {
             //Used to position each tile.
             int XPos = 20;
@@ -154,7 +183,7 @@ namespace SeenITMovieTV.Views
             }
         }
 
-        private void Initialise_ThumbnailUC()
+        private void InitialiseThumbnailUC()
         {
             //Create the default 100 picture boxes and hide / lock them until movie or series data has been retreived.
             ucWatchedMovieTVList = new List<ucThumbnailBox>(100);
@@ -164,7 +193,7 @@ namespace SeenITMovieTV.Views
             }
         }
 
-        private void Reset_Thumbails()
+        private void ResetThumbails()
         {
             for (int i = 0; i < 100; i++)
             {
@@ -179,13 +208,32 @@ namespace SeenITMovieTV.Views
         {
             MovieSeriesViewModel = new ProfileViewModel();
             //Reset all visuals ready for next use.
-            Reset_Thumbails();
+            ResetThumbails();
 
             //Return a list of all series found (Only Watched).
             GuiCursor.WaitCursor(() => { AllMoviesOrSeriesList = DataConnection.GetWatchedList(); });
 
             //Update using the information found.
             UpdateThumbnails();
+        }
+
+        private void Search_Watched_Filter_Button_Click(object sender, EventArgs e)
+        {
+            //Reset the profile view to get ready to only show search results.
+            ResetThumbails();
+
+            //Create a copy, as we don't want to alter the original list.
+            var tempList = new List<MovieTVInformation>();
+
+            foreach (var movie in AllMoviesOrSeriesList)
+            {
+                if(movie.Name.ToLower().Contains(SearchWatchedTextBox.Text) == true)
+                {                    
+                    tempList.Add(movie);
+                }
+            }
+
+            UpdateThumbnails(tempList);
         }
     }
 }
