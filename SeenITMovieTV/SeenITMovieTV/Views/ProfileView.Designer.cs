@@ -127,9 +127,9 @@
             // Watched_MovieSeries_Panel
             // 
             this.Watched_MovieSeries_Panel.AutoScroll = true;
-            this.Watched_MovieSeries_Panel.Location = new System.Drawing.Point(1, 479);
+            this.Watched_MovieSeries_Panel.Location = new System.Drawing.Point(1, 463);
             this.Watched_MovieSeries_Panel.Name = "Watched_MovieSeries_Panel";
-            this.Watched_MovieSeries_Panel.Size = new System.Drawing.Size(1075, 294);
+            this.Watched_MovieSeries_Panel.Size = new System.Drawing.Size(1075, 306);
             this.Watched_MovieSeries_Panel.TabIndex = 13;
             // 
             // Highest_Rated_PicBox
@@ -179,7 +179,7 @@
             this.Watched_Panel_Title_Label_Ignore.AutoSize = true;
             this.Watched_Panel_Title_Label_Ignore.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
             this.Watched_Panel_Title_Label_Ignore.ForeColor = System.Drawing.Color.White;
-            this.Watched_Panel_Title_Label_Ignore.Location = new System.Drawing.Point(23, 448);
+            this.Watched_Panel_Title_Label_Ignore.Location = new System.Drawing.Point(23, 432);
             this.Watched_Panel_Title_Label_Ignore.Name = "Watched_Panel_Title_Label_Ignore";
             this.Watched_Panel_Title_Label_Ignore.Size = new System.Drawing.Size(217, 28);
             this.Watched_Panel_Title_Label_Ignore.TabIndex = 24;

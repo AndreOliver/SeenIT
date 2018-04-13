@@ -17,7 +17,6 @@ namespace SeenITMovieTV.Database
     public class SQL_Interaction
     {
         private SqlConnection SqlCon = new SqlConnection();
-        private string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
         private string _UserName;
         private int _UserId;
         private int MovieId;
@@ -27,7 +26,8 @@ namespace SeenITMovieTV.Database
 
         public SQL_Interaction()
         {
-
+            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database"));
+            
         }
 
         //This method will check for an already existing instance of this class and return it. If one isn't found then it will create a new one and return that.
@@ -74,6 +74,8 @@ namespace SeenITMovieTV.Database
         /// </summary>
         public List<MovieTVInformation> GetWatchedList()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             //Create a temp list to hold all information retreived from the database.
             List<MovieTVInformation> tempInfo = new List<MovieTVInformation>();
             int SizeOfDataFound = 0;
@@ -145,6 +147,8 @@ namespace SeenITMovieTV.Database
         /// <returns></returns>
         public bool WatchedBefore(string MovieSeriesName)
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             //Used to see if the movie / series exists in the database. Its value will be replaced with any found movie Id.
             int MovieFound = 0;
 
@@ -185,6 +189,8 @@ namespace SeenITMovieTV.Database
         /// <returns></returns>
         public bool GetUserLogin(string UserName, string Password)
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             //This query will check for an Id matching the user credentials that are provided.
             string query = "SELECT u.Id, u.Name FROM UserTable u WHERE u.Name = '"+UserName+"' AND u.Password = '"+Password+"'";
 
@@ -224,6 +230,8 @@ namespace SeenITMovieTV.Database
         /// <returns></returns>
         public bool CreateUserLogin(string UserName, string Password)
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             //Check if a user already exists by that name.
             bool AlreadyExists = GetUserLogin(UserName, Password);
 
@@ -266,6 +274,8 @@ namespace SeenITMovieTV.Database
         /// <returns></returns>
         public List<string> GetHighestRatedMovieSeries()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             List<string> PictureANDTitle = new List<string>();
             string query = "SELECT m.CoverPictureURL, m.Name, m.PersonalRating FROM MovieSeriesTable m WHERE m.Id IN(SELECT uma.MovieSeriesId FROM UserMovieAssociationTable uma WHERE uma.UserId = '"+UserId+"') ORDER BY m.PersonalRating DESC";
 
@@ -299,6 +309,8 @@ namespace SeenITMovieTV.Database
         /// <returns></returns>
         public List<string> GetpersonalDetails(string MoveSeriesName)
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             List<string> RatingANDComment = new List<string>();
             string query = "SELECT m.PersonalRating, m.PersonalComment FROM MovieSeriesTable m WHERE m.Name = '"+ MoveSeriesName + "' AND m.Id IN(SELECT uma.MovieSeriesId FROM UserMovieAssociationTable uma WHERE uma.UserId = '" + UserId + "')";
 
@@ -380,6 +392,8 @@ namespace SeenITMovieTV.Database
         /// <param name="Genres"></param>
         private void UpdateGenreAssociation(string Genres)
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             List<string> result = Genres.Split('|').ToList();
             result.RemoveAt(result.Count-1);
             foreach(var genre in result)
@@ -427,6 +441,8 @@ namespace SeenITMovieTV.Database
         /// </summary>
         private void getUserDetails()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             //Get userId and store it.
             string UserQuery = "SELECT u.Id FROM USERTABLE u WHERE u.Name = '" + UserName + "'";
 
@@ -460,6 +476,8 @@ namespace SeenITMovieTV.Database
         /// <param name="CoverPictureLocation"></param>
         private void AddMovieSeries(string MovieSeriesName, string UserRating, string MetaScore, string PersonalRating, string PersonalComment, string IMDBLink, string RunTime, string CoverPictureLocation)
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             string query = "INSERT INTO MOVIESERIESTABLE (Name, OfficialUserRating, OfficialMetaScore, PersonalRating, PersonalComment, URL, Runtime, CoverPictureURL) OUTPUT INSERTED.ID VALUES (@MovieSeriesName, @OfficialUserRating, @OfficialMetaScore, @PersonalRating, @PersonalComment, @URL, @Runtime, @CoverPictureURL)";
 
             using (this.SqlCon = new SqlConnection(ConnectionString))
@@ -485,6 +503,8 @@ namespace SeenITMovieTV.Database
         /// </summary>
         private void UpdateUserMovieAssociationTable()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             //Use the created query to update the association table, find the query in the SeenITMovieTV Folder.
             string query = "INSERT INTO USERMOVIEASSOCIATIONTABLE (UserId, MovieSeriesId) VALUES (@UID, @MID)";
 
@@ -505,6 +525,8 @@ namespace SeenITMovieTV.Database
         /// </summary>
         private void PullGenreTypes()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             for (int i = 1; i <= 27; i++)
             {
                 string query = "SELECT g.Id, g.Type FROM GenreTable g WHERE g.Id = '"+i+"'";
@@ -534,6 +556,8 @@ namespace SeenITMovieTV.Database
         /// <returns></returns>
         private string CalculateBestGenre()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             int MostOccuringGenreId = 0;
             int HighestScore = 0;
             string MostWatchedGenre = string.Empty;
@@ -557,6 +581,8 @@ namespace SeenITMovieTV.Database
         /// </summary>
         private void PullGenreAmounts()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             for (int i = 1; i <= 27; i++)
             {
                 //TODO: FIX QUERY TO WORK WITH MULTIPLE USERS: So far the issue is how to join on to the two tables using the MovieSeriesId and GenreId, See the stored query for correct SQL answer and try convert it to C#!
@@ -588,6 +614,8 @@ namespace SeenITMovieTV.Database
         /// <returns></returns>
         private double PullRunTimeUsingQuery()
         {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
             List<string> RunTimeInformation = new List<string>();
 
             //Get userId and store it.

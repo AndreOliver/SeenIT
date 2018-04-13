@@ -322,6 +322,7 @@ namespace SeenITMovieTV.UserControls
 
             HtmlWeb website = new HtmlWeb();
             HtmlAgilityPack.HtmlDocument page1 = website.Load(SearchCriteria);
+
             var MovieNode = page1.DocumentNode.SelectSingleNode("//*[@id='main']/div/div[2]/div");
 
             var InnerHTML = MovieNode.InnerHtml;
@@ -401,6 +402,8 @@ namespace SeenITMovieTV.UserControls
             Regex.Replace(AlteredName, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
             AlteredName = AlteredName.Replace(" ", "+");
             AlteredName = AlteredName.Replace(":", "");
+            AlteredName = AlteredName.Replace(",", "");
+            AlteredName = AlteredName.Replace("!", "");
             return (AlteredName + ".html");
         }
 

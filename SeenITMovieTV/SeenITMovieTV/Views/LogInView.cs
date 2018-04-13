@@ -19,6 +19,7 @@ namespace SeenITMovieTV.Views
         public LogInView()
         {
             InitializeComponent();
+            
             DataConnection = SQL_Interaction.GetSQL_Connection;
         }
 

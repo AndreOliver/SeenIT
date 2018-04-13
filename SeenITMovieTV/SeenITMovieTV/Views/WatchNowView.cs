@@ -39,13 +39,15 @@ namespace SeenITMovieTV.Views
 
         private static void InitialiseCefWithSettings()
         {
+            string PepFlashPath = ( (Application.StartupPath) + ("\\pepflashplayer32_29_0_0_113.dll") );
+
             if (Cef.IsInitialized == false)
-            {
+            {               
                 //Create and define new settings.
                 CefSettings settings = new CefSettings();
 
                 settings.CachePath = "cache";
-                settings.CefCommandLineArgs.Add("ppapi-flash-path", @"C:\Windows\SysWOW64\Macromed\Flash\pepflashplayer32_29_0_0_113.dll");
+                settings.CefCommandLineArgs.Add("ppapi-flash-path", @PepFlashPath);
                 settings.CefCommandLineArgs.Add("ppapi-flash-version", "29.0.0.113");
 
                 //Initialise Cef with the provided settings.
