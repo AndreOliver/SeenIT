@@ -235,5 +235,10 @@ namespace SeenITMovieTV.Views
 
             UpdateThumbnails(tempList);
         }
+
+        private void ProfileView_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
     }
 }

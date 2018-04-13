@@ -234,6 +234,7 @@
             this.Text = " ";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfileView_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Highest_Rated_PicBox)).EndInit();
             this.ResumeLayout(false);

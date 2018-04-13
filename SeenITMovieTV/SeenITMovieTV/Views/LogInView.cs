@@ -66,5 +66,10 @@ namespace SeenITMovieTV.Views
                 MessageBox.Show("Error! Could not create a new user");
             }
         }
+
+        private void LogInView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

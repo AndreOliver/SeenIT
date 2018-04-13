@@ -108,5 +108,10 @@ namespace SeenITMovieTV.Views
             //Return true to show the action has been successful.
             return true;
         }
+
+        private void MovieSeriesSummaryFormView_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
     }
 }

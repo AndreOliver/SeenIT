@@ -54,10 +54,5 @@ namespace SeenITMovieTV.Views
                 Cef.Initialize(settings);
             }
         }
-
-        private void WatchNowView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
     }
 }

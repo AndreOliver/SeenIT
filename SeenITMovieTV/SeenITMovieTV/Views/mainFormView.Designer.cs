@@ -154,6 +154,7 @@
             this.Style = MetroFramework.MetroColorStyle.Black;
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainFormView_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

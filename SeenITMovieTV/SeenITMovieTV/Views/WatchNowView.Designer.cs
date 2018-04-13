@@ -37,7 +37,7 @@
             this.Watching_Through_SeenIT_Label_Ignore.AutoSize = true;
             this.Watching_Through_SeenIT_Label_Ignore.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Watching_Through_SeenIT_Label_Ignore.ForeColor = System.Drawing.Color.White;
-            this.Watching_Through_SeenIT_Label_Ignore.Location = new System.Drawing.Point(464, 38);
+            this.Watching_Through_SeenIT_Label_Ignore.Location = new System.Drawing.Point(464, 24);
             this.Watching_Through_SeenIT_Label_Ignore.Name = "Watching_Through_SeenIT_Label_Ignore";
             this.Watching_Through_SeenIT_Label_Ignore.Size = new System.Drawing.Size(256, 28);
             this.Watching_Through_SeenIT_Label_Ignore.TabIndex = 13;
@@ -55,7 +55,6 @@
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WatchNowView_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

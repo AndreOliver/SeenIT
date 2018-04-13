@@ -172,5 +172,10 @@ namespace SeenITMovieTV
         {
             MessageBox.Show("BTC: 1DdK7DvLwpk48e1EXfQpKw3zumxXsu5HqD");
         }
+
+        private void mainFormView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
