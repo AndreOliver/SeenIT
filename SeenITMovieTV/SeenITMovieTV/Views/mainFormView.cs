@@ -65,8 +65,8 @@ namespace SeenITMovieTV
             {
                 Movie_Toggle_Button.Text = "View Top Series";
 
-                //Return a list of all series found (watched and unwatched, not yet filtered).
-                GuiCursor.WaitCursor(() => { AllMoviesOrSeriesList = MainFormViewModel.ViewMovies(); });
+                //Return a list of all movies found (watched and unwatched, not yet filtered).
+                GuiCursor.WaitCursor(() => { AllMoviesOrSeriesList = MainFormViewModel.View(true); });
 
                 loadMovies = false;
             }
@@ -74,8 +74,8 @@ namespace SeenITMovieTV
             {
                 Movie_Toggle_Button.Text = "View Top Movies";
 
-                //Return a list of all movies found (watched and unwatched, not yet filtered).
-                GuiCursor.WaitCursor(() => { AllMoviesOrSeriesList = MainFormViewModel.ViewSeries(); });
+                //Return a list of all series found (watched and unwatched, not yet filtered).
+                GuiCursor.WaitCursor(() => { AllMoviesOrSeriesList = MainFormViewModel.View(false); });
 
                 loadMovies = true;
             }
@@ -157,6 +157,9 @@ namespace SeenITMovieTV
             }
         }
 
+        /// <summary>
+        /// Wipe all data from each thumbnail and disable / make them invisible.
+        /// </summary>
         private void Reset_Thumbails()
         {
             for(int i=0; i < 100; i++)
@@ -168,13 +171,20 @@ namespace SeenITMovieTV
             }
         }
 
+        /// <summary>
+        /// Basic Donate Button which displays a text field. The text field is a BTC Wallet Public Address link.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Donate_Button_Click(object sender, EventArgs e)
         {
             MessageBox.Show("BTC: 1DdK7DvLwpk48e1EXfQpKw3zumxXsu5HqD");
         }
 
+
         private void mainFormView_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //Make sure the application completely closes if the user exits the application.
             Application.Exit();
         }
     }

@@ -8,30 +8,27 @@ using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using SeenITMovieTV.Views;
+using SeenITMovieTV.Resources;
 
 namespace SeenITMovieTV.ViewModels
 {
     class mainFormViewModel
     {
         static readonly Regex trimmer = new Regex(@"\s\s+");
-        ProfileView ProfileHandle;
-        mainFormView Mainhandle;
+        private ProfileView ProfileHandle;
+        private mainFormView Mainhandle;
+        private HtmlAgilityWrapper HtmlAgilityWrap;
 
         public List<MovieTVInformation> SearchClicked(string searchCriteria)
         {
             List<MovieTVInformation> AllFoundMovies = new List<MovieTVInformation>();
-            string MovieSeriesToFind = string.Empty;
-
-            HtmlWeb website = new HtmlWeb();
-            
-            MovieSeriesToFind = "https://www.imdb.com/find?q=" + searchCriteria + "&s=tt&ref_=fn_al_tt_mr";
-
-            HtmlAgilityPack.HtmlDocument doc = website.Load(MovieSeriesToFind);
             List<HtmlNode> MovieSeriesFoundNode = new List<HtmlNode>();
+
+            string MovieSeriesToFind = "https://www.imdb.com/find?q=" + searchCriteria + "&s=tt&ref_=fn_al_tt_mr";
 
             try
             {
-                MovieSeriesFoundNode = doc.DocumentNode.SelectNodes("//*[@id='main']/div/div[2]/table/tr").ToList();
+                MovieSeriesFoundNode = HtmlAgilityWrap.SelectMultipleNodes(MovieSeriesToFind, "//*[@id='main']/div/div[2]/table/tr");
             }
             catch
             {
@@ -78,25 +75,50 @@ namespace SeenITMovieTV.ViewModels
             return 0;
         }
 
+        /// <summary>
+        /// Constructor. Initialises the class and all its resources.
+        /// </summary>
+        /// <param name="handle"></param>
         public mainFormViewModel(mainFormView handle)
         {
             Mainhandle = handle;
+            HtmlAgilityWrap = new HtmlAgilityWrapper();
         }
 
-        public List<MovieTVInformation> ViewMovies()
+        public List<MovieTVInformation> View(bool Movie)
         {
-            List<MovieTVInformation> AllFoundMovies = new List<MovieTVInformation>();
-            HtmlWeb website = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = website.Load("http://www.imdb.com/chart/moviemeter"); 
+            //List of Movies / Series Found.
+            List<MovieTVInformation> AllFound = new List<MovieTVInformation>();
 
-            var MovieNodes = doc.DocumentNode.SelectNodes("//*[@id='main']/div/span/div/div/div[3]/table/tbody/tr").ToList();
+            //List of Nodes found for movies / series.
+            List<HtmlNode> MovieSeriesFoundNode = new List<HtmlNode>();
 
-            for (int i = 0; i < MovieNodes.Count; i++)
+            string URLToLoad = string.Empty;
+
+            if (Movie == true)
             {
-                AllFoundMovies.Add(new MovieTVInformation());
+                URLToLoad = "http://www.imdb.com/chart/moviemeter";
+            }
+            else
+            {
+                URLToLoad = "http://www.imdb.com/chart/tvmeter";
             }
 
-            Parallel.ForEach(MovieNodes, (node, state, counter) =>
+            try
+            {
+                MovieSeriesFoundNode = HtmlAgilityWrap.SelectMultipleNodes(URLToLoad, "//*[@id='main']/div/span/div/div/div[3]/table/tbody/tr");
+            }
+            catch
+            {
+                MessageBox.Show("No Results Found");
+            }
+
+            for (int i = 0; i < MovieSeriesFoundNode.Count; i++)
+            {
+                AllFound.Add(new MovieTVInformation());
+            }
+
+            Parallel.ForEach(MovieSeriesFoundNode, (node, state, counter) =>
             {
                 var input = node.InnerHtml;
                 var output = input.Split('"', '"').Where((item, index) => index % 2 != 0).ToList();
@@ -104,57 +126,20 @@ namespace SeenITMovieTV.ViewModels
                 //Name.
                 var TempName = node.InnerText;
                 TempName = AdjustName(TempName, Convert.ToInt32(counter));
-                AllFoundMovies[Convert.ToInt32(counter)].Name = TempName;
+                AllFound[Convert.ToInt32(counter)].Name = TempName;
 
                 //CoverPhoto Image.
                 var TempImg = output[12];
                 TempImg = AdjustImage(TempImg);
-                AllFoundMovies[Convert.ToInt32(counter)].CoverPictureLink = TempImg;
+                AllFound[Convert.ToInt32(counter)].CoverPictureLink = TempImg;
 
                 //IMDB Link.
                 var TempLink = output[11];
                 TempLink = ("www.imdb.com" + TempLink);
-                AllFoundMovies[Convert.ToInt32(counter)].IMDBLink = TempLink;
+                AllFound[Convert.ToInt32(counter)].IMDBLink = TempLink;
             });
 
-            return AllFoundMovies;
-        }
-
-        public List<MovieTVInformation> ViewSeries()
-        {           
-            List<MovieTVInformation> AllFoundSeries = new List<MovieTVInformation>();
-            HtmlWeb website = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = website.Load("http://www.imdb.com/chart/tvmeter");
-
-            var SeriesNodes = doc.DocumentNode.SelectNodes("//*[@id='main']/div/span/div/div/div[3]/table/tbody/tr").ToList();
-
-            for (int i = 0; i < SeriesNodes.Count; i++)
-            {
-                AllFoundSeries.Add(new MovieTVInformation());
-            }
-
-            Parallel.ForEach(SeriesNodes, (node, state, counter) =>
-            {
-                var input = node.InnerHtml;
-                var output = input.Split('"', '"').Where((item, index) => index % 2 != 0).ToList();
-
-                //Name.
-                var TempName = node.InnerText;
-                TempName = AdjustName(TempName, Convert.ToInt32(counter));
-                AllFoundSeries[Convert.ToInt32(counter)].Name = TempName;
-
-                //CoverPhoto Image.
-                var TempImg = output[12];
-                TempImg = AdjustImage(TempImg);
-                AllFoundSeries[Convert.ToInt32(counter)].CoverPictureLink = TempImg;
-
-                //IMDB Link.
-                var TempLink = output[11];
-                TempLink = ("www.imdb.com" + TempLink);
-                AllFoundSeries[Convert.ToInt32(counter)].IMDBLink = TempLink;
-            });
-
-            return AllFoundSeries;
+            return AllFound;
         }
 
         private string AdjustImage(string URL)
@@ -205,16 +190,28 @@ namespace SeenITMovieTV.ViewModels
             return URL;
         }
 
+        /// <summary>
+        /// Adjust the name of the movie / series scraped from the chosen website.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="placement"></param>
+        /// <returns></returns>
         private string AdjustName(string name, int placement)
         {
+            //Remove excess characters from the start and end of the string.
             name = name.TrimStart();
             name = name.TrimEnd();
+
+            //Remove any new lines found within the HTML InnerText.
             name = name.Replace("\n", string.Empty);
+
+            //Find and set the name.
             int index = name.LastIndexOf("(");
             if (index > 0)
             {
                 name = name.Substring(0, index);
             }
+
 
             name = trimmer.Replace(name, " ");
             name = name.Remove(name.Length - 1);

@@ -303,6 +303,7 @@
             // Stream_Button
             // 
             this.Stream_Button.BackColor = System.Drawing.Color.Yellow;
+            this.Stream_Button.Enabled = false;
             this.Stream_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Stream_Button.Location = new System.Drawing.Point(27, 571);
             this.Stream_Button.Name = "Stream_Button";
@@ -310,6 +311,7 @@
             this.Stream_Button.TabIndex = 24;
             this.Stream_Button.Text = "Stream Now";
             this.Stream_Button.UseVisualStyleBackColor = false;
+            this.Stream_Button.Visible = false;
             this.Stream_Button.Click += new System.EventHandler(this.Stream_Button_Click);
             // 
             // Browser_Choice_ComboBox
@@ -324,20 +326,23 @@
             "iexplore"});
             this.Browser_Choice_ComboBox.Location = new System.Drawing.Point(151, 579);
             this.Browser_Choice_ComboBox.Name = "Browser_Choice_ComboBox";
-            this.Browser_Choice_ComboBox.Size = new System.Drawing.Size(154, 21);
+            this.Browser_Choice_ComboBox.Size = new System.Drawing.Size(220, 21);
             this.Browser_Choice_ComboBox.TabIndex = 25;
+            this.Browser_Choice_ComboBox.Visible = false;
             // 
             // Watch_Through_External_Browser_Checkbox
             // 
             this.Watch_Through_External_Browser_Checkbox.AutoSize = true;
+            this.Watch_Through_External_Browser_Checkbox.Enabled = false;
             this.Watch_Through_External_Browser_Checkbox.Font = new System.Drawing.Font("Roboto", 8.25F);
             this.Watch_Through_External_Browser_Checkbox.ForeColor = System.Drawing.Color.White;
             this.Watch_Through_External_Browser_Checkbox.Location = new System.Drawing.Point(151, 556);
             this.Watch_Through_External_Browser_Checkbox.Name = "Watch_Through_External_Browser_Checkbox";
-            this.Watch_Through_External_Browser_Checkbox.Size = new System.Drawing.Size(134, 19);
+            this.Watch_Through_External_Browser_Checkbox.Size = new System.Drawing.Size(220, 19);
             this.Watch_Through_External_Browser_Checkbox.TabIndex = 26;
-            this.Watch_Through_External_Browser_Checkbox.Text = "Use External Browser";
+            this.Watch_Through_External_Browser_Checkbox.Text = "Use External Browser (Recommended)";
             this.Watch_Through_External_Browser_Checkbox.UseVisualStyleBackColor = true;
+            this.Watch_Through_External_Browser_Checkbox.Visible = false;
             this.Watch_Through_External_Browser_Checkbox.CheckedChanged += new System.EventHandler(this.Watch_Through_External_Browser_Checkbox_CheckedChanged);
             // 
             // ucMovieSeriesInfo

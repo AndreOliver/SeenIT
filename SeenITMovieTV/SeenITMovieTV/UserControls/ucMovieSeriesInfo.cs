@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using SeenITMovieTV.Database;
-
+using SeenITMovieTV.Resources;
 using System.Windows.Forms;
 using SeenITMovieTV.Views;
-using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
@@ -27,12 +26,13 @@ namespace SeenITMovieTV.UserControls
         private static ucMovieSeriesInfo instance;
         private MovieSeriesSummaryFormView SummaryFormHandle;
         private SQL_Interaction databaseConnection;
-
+        private HtmlAgilityWrapper HTMLAgilityWrap;
         public ucMovieSeriesInfo()
         {
             InitializeComponent();
             SummaryFormHandle = MovieSeriesSummaryFormView.GetSummaryFormView;
-            databaseConnection = SQL_Interaction.GetSQL_Connection;           
+            databaseConnection = SQL_Interaction.GetSQL_Connection;
+            HTMLAgilityWrap = new HtmlAgilityWrapper();
         }
 
         /// <summary>
@@ -318,14 +318,10 @@ namespace SeenITMovieTV.UserControls
         {
             /*PART 1: Search the movie streaming site for our movie. If found retrieve the URL of that movie and save it.*/
             var criteria = FormatNameForSearch(MovieSeriesName);
+
             string SearchCriteria = "https://solarmoviez.ru/search/" + criteria;
 
-            HtmlWeb website = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument page1 = website.Load(SearchCriteria);
-
-            var MovieNode = page1.DocumentNode.SelectSingleNode("//*[@id='main']/div/div[2]/div");
-
-            var InnerHTML = MovieNode.InnerHtml;
+            var InnerHTML = HTMLAgilityWrap.SelectSingleNode(SearchCriteria, "//*[@id='main']/div/div[2]/div").InnerHtml;
 
             var UnfilteredList = InnerHTML.Split('"', '"').ToList();
 
@@ -346,11 +342,7 @@ namespace SeenITMovieTV.UserControls
 
             /*PART 2: Use the saved URL to access the next page where the movie file is located.*/
 
-            HtmlAgilityPack.HtmlDocument page2 = website.Load(FilteredToOnlyURLs[0].ToString());
-            var MovieFileLinkNode = page2.DocumentNode.SelectSingleNode("//*[@id='mv-info']/div/div[1]/div/a");
-
-            var OuterHTML = MovieFileLinkNode.OuterHtml;
-
+            var OuterHTML = HTMLAgilityWrap.SelectSingleNode(FilteredToOnlyURLs[0].ToString(), "//*[@id='mv-info']/div/div[1]/div/a").OuterHtml;
             var UnfilteredMovieFileList = InnerHTML.Split('"', '"').ToList();
 
             List<string> FilteredMovieFileList = new List<string>();

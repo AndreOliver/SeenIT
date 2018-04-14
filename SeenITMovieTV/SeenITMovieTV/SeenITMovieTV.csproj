@@ -113,6 +113,7 @@
     <Compile Include="Database\SQL_Interaction.cs" />
     <Compile Include="DataObjects\MovieTVInformation.cs" />
     <Compile Include="Resources\GuiCursor.cs" />
+    <Compile Include="Resources\HtmlAgilityWrapper.cs" />
     <Compile Include="UserControls\ucMovieSeriesInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
