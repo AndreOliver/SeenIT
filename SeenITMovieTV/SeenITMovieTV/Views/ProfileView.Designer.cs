@@ -43,6 +43,8 @@
             this.Watched_Panel_Title_Label_Ignore = new System.Windows.Forms.Label();
             this.SearchWatchedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.Search_Watched_Filter_Button = new System.Windows.Forms.Button();
+            this.Global_Leaderboard_Placement_Label_Ignore = new System.Windows.Forms.Label();
+            this.Leaderboard_Placement_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Highest_Rated_PicBox)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +103,7 @@
             this.Most_Watched_Genre_Label.Size = new System.Drawing.Size(79, 28);
             this.Most_Watched_Genre_Label.TabIndex = 10;
             this.Most_Watched_Genre_Label.Text = "GENRE";
+            this.Most_Watched_Genre_Label.Visible = false;
             // 
             // Total_Time_Label_Ignore
             // 
@@ -123,6 +126,7 @@
             this.Most_Watched_Genre_Label_Ignore.Size = new System.Drawing.Size(262, 28);
             this.Most_Watched_Genre_Label_Ignore.TabIndex = 12;
             this.Most_Watched_Genre_Label_Ignore.Text = "Your Most Watched Genre:";
+            this.Most_Watched_Genre_Label_Ignore.Visible = false;
             // 
             // Watched_MovieSeries_Panel
             // 
@@ -207,11 +211,37 @@
             this.Search_Watched_Filter_Button.UseVisualStyleBackColor = false;
             this.Search_Watched_Filter_Button.Click += new System.EventHandler(this.Search_Watched_Filter_Button_Click);
             // 
+            // Global_Leaderboard_Placement_Label_Ignore
+            // 
+            this.Global_Leaderboard_Placement_Label_Ignore.AutoSize = true;
+            this.Global_Leaderboard_Placement_Label_Ignore.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Global_Leaderboard_Placement_Label_Ignore.ForeColor = System.Drawing.Color.White;
+            this.Global_Leaderboard_Placement_Label_Ignore.Location = new System.Drawing.Point(23, 265);
+            this.Global_Leaderboard_Placement_Label_Ignore.Name = "Global_Leaderboard_Placement_Label_Ignore";
+            this.Global_Leaderboard_Placement_Label_Ignore.Size = new System.Drawing.Size(382, 28);
+            this.Global_Leaderboard_Placement_Label_Ignore.TabIndex = 27;
+            this.Global_Leaderboard_Placement_Label_Ignore.Text = "Your Place on the Global Leaderboards:";
+            this.Global_Leaderboard_Placement_Label_Ignore.Visible = false;
+            // 
+            // Leaderboard_Placement_Label
+            // 
+            this.Leaderboard_Placement_Label.AutoSize = true;
+            this.Leaderboard_Placement_Label.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Leaderboard_Placement_Label.ForeColor = System.Drawing.Color.White;
+            this.Leaderboard_Placement_Label.Location = new System.Drawing.Point(479, 265);
+            this.Leaderboard_Placement_Label.Name = "Leaderboard_Placement_Label";
+            this.Leaderboard_Placement_Label.Size = new System.Drawing.Size(79, 28);
+            this.Leaderboard_Placement_Label.TabIndex = 28;
+            this.Leaderboard_Placement_Label.Text = "GENRE";
+            this.Leaderboard_Placement_Label.Visible = false;
+            // 
             // ProfileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 774);
+            this.Controls.Add(this.Leaderboard_Placement_Label);
+            this.Controls.Add(this.Global_Leaderboard_Placement_Label_Ignore);
             this.Controls.Add(this.SearchWatchedTextBox);
             this.Controls.Add(this.Search_Watched_Filter_Button);
             this.Controls.Add(this.Watched_Panel_Title_Label_Ignore);
@@ -259,5 +289,7 @@
         private System.Windows.Forms.Label Watched_Panel_Title_Label_Ignore;
         private System.Windows.Forms.MaskedTextBox SearchWatchedTextBox;
         private System.Windows.Forms.Button Search_Watched_Filter_Button;
+        private System.Windows.Forms.Label Global_Leaderboard_Placement_Label_Ignore;
+        private System.Windows.Forms.Label Leaderboard_Placement_Label;
     }
 }

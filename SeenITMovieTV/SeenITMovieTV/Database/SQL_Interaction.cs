@@ -187,12 +187,12 @@ namespace SeenITMovieTV.Database
         /// <param name="UserName"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        public bool GetUserLogin(string UserName, string Password)
+        public bool GetUserLogin(string UserName)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
 
             //This query will check for an Id matching the user credentials that are provided.
-            string query = "SELECT u.Id, u.Name FROM UserTable u WHERE u.Name = '"+UserName+"' AND u.Password = '"+Password+"'";
+            string query = "SELECT u.Id, u.Name FROM UserTable u WHERE u.Name = '"+UserName+"'";
 
             using (this.SqlCon = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, SqlCon))
@@ -222,23 +222,50 @@ namespace SeenITMovieTV.Database
             return false;
         }
 
+        public List<string> RetrieveLostDetails(string Email)
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+            List<string> Details = new List<string>();
+
+            string query = "SELECT u.Name, u.Password FROM UserTable u WHERE u.Email = '" + Email + "'";
+
+            using (this.SqlCon = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, SqlCon))
+            {
+                SqlCon.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Details[0] = reader.GetString(0);
+                            Details[1] = reader.GetString(1);
+                        }
+                    }
+                }
+            }
+
+            return Details;
+        }
+
         /// <summary>
         /// This method will take the details provided and create a new user. If a user already exists under the name provided then it will return false and let the user know by opening a message box. 
         /// </summary>
         /// <param name="UserName"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        public bool CreateUserLogin(string UserName, string Password)
+        public bool CreateUserLogin(string UserName, string Password, string Email)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
 
             //Check if a user already exists by that name.
-            bool AlreadyExists = GetUserLogin(UserName, Password);
+            bool AlreadyExists = GetUserLogin(UserName);
 
             //If no user exists then create one.
             if (AlreadyExists == false)
             {
-                string query = "INSERT INTO USERTABLE (Name, Password) OUTPUT INSERTED.ID VALUES (@Name, @Password)";
+                string query = "INSERT INTO USERTABLE (Name, Password, Email) OUTPUT INSERTED.ID VALUES (@Name, @Password, @Email)";
 
                 using (this.SqlCon = new SqlConnection(ConnectionString))
                 using (SqlCommand command = new SqlCommand(query, SqlCon))
@@ -247,6 +274,7 @@ namespace SeenITMovieTV.Database
 
                     command.Parameters.AddWithValue("@Name", UserName);
                     command.Parameters.AddWithValue("@Password", Password);
+                    command.Parameters.AddWithValue("@Email", Email);
 
                     //Once the user has been created store their Id in the application ready to be used.
                     UserId = (Int32)command.ExecuteScalar();
