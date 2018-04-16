@@ -184,6 +184,7 @@
             this.MaximizeBox = false;
             this.Name = "LogInView";
             this.Padding = new System.Windows.Forms.Padding(40, 129, 40, 43);
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Black;
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
