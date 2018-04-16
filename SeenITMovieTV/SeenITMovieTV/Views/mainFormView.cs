@@ -58,6 +58,8 @@ namespace SeenITMovieTV
 
         private void MovieTV_Toggle_Button_Click(object sender, EventArgs e)
         {
+            HideWelcomeMessage();
+
             //Reset all visuals ready for next use.
             Reset_Thumbails();
 
@@ -81,6 +83,13 @@ namespace SeenITMovieTV
             }
 
             UpdateThumbnails();
+        }
+
+        private void HideWelcomeMessage()
+        {
+            this.Welcome_Label_Ignore.Visible = false;
+            this.Welcome_Link_Label_Ignore.Visible = false;
+            this.Welcome_Link_Label_Ignore.Enabled = false;
         }
 
         private void UpdateThumbnails()

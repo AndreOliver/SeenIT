@@ -100,6 +100,5 @@ C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Relea
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.csproj.GenerateResource.Cache
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.csproj.CoreCompileInputs.cache
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.exe
-C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.csprojResolveAssemblyReference.cache
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\x64\Release\Database\SeenITDatabase.mdf
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\bin\x64\Release\Database\SeenITDatabase_log.ldf
