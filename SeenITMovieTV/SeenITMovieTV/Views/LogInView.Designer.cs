@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInView));
             this.LogIn_Label = new System.Windows.Forms.Label();
             this.LogIn_Button = new System.Windows.Forms.Button();
             this.Create_Account_Button = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.Email_Label_Ignore = new System.Windows.Forms.Label();
             this.Email_MaskedTextbox = new System.Windows.Forms.MaskedTextBox();
             this.Forgot_Password_Label = new System.Windows.Forms.Button();
+            this.SeenIT_Logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.SeenIT_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // LogIn_Label
@@ -45,11 +48,11 @@
             this.LogIn_Label.BackColor = System.Drawing.Color.Transparent;
             this.LogIn_Label.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogIn_Label.ForeColor = System.Drawing.SystemColors.Window;
-            this.LogIn_Label.Location = new System.Drawing.Point(105, 19);
+            this.LogIn_Label.Location = new System.Drawing.Point(159, 22);
             this.LogIn_Label.Name = "LogIn_Label";
-            this.LogIn_Label.Size = new System.Drawing.Size(215, 28);
+            this.LogIn_Label.Size = new System.Drawing.Size(96, 28);
             this.LogIn_Label.TabIndex = 6;
-            this.LogIn_Label.Text = "Log In - SeenIT";
+            this.LogIn_Label.Text = "Log In";
             this.LogIn_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LogIn_Button
@@ -150,11 +153,21 @@
             this.Forgot_Password_Label.UseVisualStyleBackColor = false;
             this.Forgot_Password_Label.Click += new System.EventHandler(this.Forgot_Password_Label_Click);
             // 
+            // SeenIT_Logo
+            // 
+            this.SeenIT_Logo.Image = global::SeenITMovieTV.Properties.Resources.SeenIT_Logo_LogInView_Sized;
+            this.SeenIT_Logo.Location = new System.Drawing.Point(10, 5);
+            this.SeenIT_Logo.Name = "SeenIT_Logo";
+            this.SeenIT_Logo.Size = new System.Drawing.Size(120, 43);
+            this.SeenIT_Logo.TabIndex = 17;
+            this.SeenIT_Logo.TabStop = false;
+            // 
             // LogInView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 400);
+            this.Controls.Add(this.SeenIT_Logo);
             this.Controls.Add(this.Forgot_Password_Label);
             this.Controls.Add(this.Email_Label_Ignore);
             this.Controls.Add(this.Email_MaskedTextbox);
@@ -166,6 +179,7 @@
             this.Controls.Add(this.LogIn_Button);
             this.Controls.Add(this.LogIn_Label);
             this.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "LogInView";
@@ -175,6 +189,7 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LogInView_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.SeenIT_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +207,6 @@
         private System.Windows.Forms.Label Email_Label_Ignore;
         private System.Windows.Forms.MaskedTextBox Email_MaskedTextbox;
         private System.Windows.Forms.Button Forgot_Password_Label;
+        private System.Windows.Forms.PictureBox SeenIT_Logo;
     }
 }

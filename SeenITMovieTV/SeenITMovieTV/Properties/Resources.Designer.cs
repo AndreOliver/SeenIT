@@ -63,6 +63,16 @@ namespace SeenITMovieTV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SeenIT_Logo_LogInView_Sized {
+            get {
+                object obj = ResourceManager.GetObject("SeenIT_Logo_LogInView_Sized", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap yellow_border {
             get {
                 object obj = ResourceManager.GetObject("yellow_border", resourceCulture);

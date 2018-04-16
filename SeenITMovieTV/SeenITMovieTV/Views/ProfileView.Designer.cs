@@ -45,8 +45,10 @@
             this.Search_Watched_Filter_Button = new System.Windows.Forms.Button();
             this.Global_Leaderboard_Placement_Label_Ignore = new System.Windows.Forms.Label();
             this.Leaderboard_Placement_Label = new System.Windows.Forms.Label();
+            this.SeenIT_Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Highest_Rated_PicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeenIT_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // YellowBorder
@@ -235,11 +237,21 @@
             this.Leaderboard_Placement_Label.Text = "GENRE";
             this.Leaderboard_Placement_Label.Visible = false;
             // 
+            // SeenIT_Logo
+            // 
+            this.SeenIT_Logo.Image = global::SeenITMovieTV.Properties.Resources.SeenIT_Logo_LogInView_Sized;
+            this.SeenIT_Logo.Location = new System.Drawing.Point(10, 5);
+            this.SeenIT_Logo.Name = "SeenIT_Logo";
+            this.SeenIT_Logo.Size = new System.Drawing.Size(120, 43);
+            this.SeenIT_Logo.TabIndex = 29;
+            this.SeenIT_Logo.TabStop = false;
+            // 
             // ProfileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 774);
+            this.Controls.Add(this.SeenIT_Logo);
             this.Controls.Add(this.Leaderboard_Placement_Label);
             this.Controls.Add(this.Global_Leaderboard_Placement_Label_Ignore);
             this.Controls.Add(this.SearchWatchedTextBox);
@@ -267,6 +279,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfileView_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Highest_Rated_PicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SeenIT_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +304,6 @@
         private System.Windows.Forms.Button Search_Watched_Filter_Button;
         private System.Windows.Forms.Label Global_Leaderboard_Placement_Label_Ignore;
         private System.Windows.Forms.Label Leaderboard_Placement_Label;
+        private System.Windows.Forms.PictureBox SeenIT_Logo;
     }
 }

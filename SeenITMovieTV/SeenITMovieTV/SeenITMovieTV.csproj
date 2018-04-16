@@ -80,6 +80,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SeenIT_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="HtmlAgilityPack, Version=1.7.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.7.0\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -112,6 +115,11 @@
   <ItemGroup>
     <Compile Include="Database\SQL_Interaction.cs" />
     <Compile Include="DataObjects\MovieTVInformation.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\GuiCursor.cs" />
     <Compile Include="Resources\HtmlAgilityWrapper.cs" />
     <Compile Include="UserControls\ucMovieSeriesInfo.cs">
@@ -125,11 +133,6 @@
     </Compile>
     <Compile Include="UserControls\ucThumbnailBox.Designer.cs">
       <DependentUpon>ucThumbnailBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\mainFormViewModel.cs" />
     <Compile Include="ViewModels\MovieSeriesSummaryViewModel.cs" />
@@ -212,6 +215,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BrandImages\SeenIT_Icon.ico" />
+    <Content Include="BrandImages\SeenIT_Logo_LogInView_Sized.png" />
     <Content Include="Database\SeenITDatabase.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -223,6 +228,7 @@
     <Content Include="Resources\pepflashplayer.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SeenIT_Icon.ico" />
     <None Include="Resources\yellow_border.jpg" />
   </ItemGroup>
   <ItemGroup>

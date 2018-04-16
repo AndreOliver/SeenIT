@@ -31,7 +31,9 @@
             this.YellowBorder = new System.Windows.Forms.PictureBox();
             this.Movie_Title_Label = new System.Windows.Forms.Label();
             this.Back_Button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // YellowBorder
@@ -67,12 +69,22 @@
             this.Back_Button.UseVisualStyleBackColor = false;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SeenITMovieTV.Properties.Resources.SeenIT_Logo_LogInView_Sized;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 43);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // MovieSeriesSummaryFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 740);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.Movie_Title_Label);
             this.Controls.Add(this.YellowBorder);
@@ -83,6 +95,7 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MovieSeriesSummaryFormView_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -92,5 +105,6 @@
         private System.Windows.Forms.PictureBox YellowBorder;
         private System.Windows.Forms.Label Movie_Title_Label;
         private System.Windows.Forms.Button Back_Button;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

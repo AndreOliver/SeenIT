@@ -94,7 +94,7 @@ namespace SeenITMovieTV.Views
                     message.Body = "Hi, you've recently requested that we email you your login credentials for our application. Please Find below your details: \n\n Username:"+FoundDetails[0]+" \n Password: "+FoundDetails[1]+"\n \n Thankyou.";
 
                     SmtpClient mailer = new SmtpClient("smtp.gmail.com", 587);
-                    mailer.Credentials = new NetworkCredential("YOUREMAIL@gmail.com", "YOURPASSWORD");
+                    mailer.Credentials = new NetworkCredential("seenitmovieseries@gmail.com", "SeenITAaronMoriarty");
                     mailer.EnableSsl = true;
                     mailer.Send(message);
 
