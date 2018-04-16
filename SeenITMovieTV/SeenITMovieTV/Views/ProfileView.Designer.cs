@@ -46,6 +46,7 @@
             this.Global_Leaderboard_Placement_Label_Ignore = new System.Windows.Forms.Label();
             this.Leaderboard_Placement_Label = new System.Windows.Forms.Label();
             this.SeenIT_Logo = new System.Windows.Forms.PictureBox();
+            this.Refresh_Profile_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.YellowBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Highest_Rated_PicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeenIT_Logo)).BeginInit();
@@ -246,11 +247,27 @@
             this.SeenIT_Logo.TabIndex = 29;
             this.SeenIT_Logo.TabStop = false;
             // 
+            // Refresh_Profile_Button
+            // 
+            this.Refresh_Profile_Button.BackColor = System.Drawing.Color.Yellow;
+            this.Refresh_Profile_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Refresh_Profile_Button.FlatAppearance.BorderSize = 0;
+            this.Refresh_Profile_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refresh_Profile_Button.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Refresh_Profile_Button.Location = new System.Drawing.Point(120, 59);
+            this.Refresh_Profile_Button.Name = "Refresh_Profile_Button";
+            this.Refresh_Profile_Button.Size = new System.Drawing.Size(105, 35);
+            this.Refresh_Profile_Button.TabIndex = 30;
+            this.Refresh_Profile_Button.Text = "Refresh Profile";
+            this.Refresh_Profile_Button.UseVisualStyleBackColor = false;
+            this.Refresh_Profile_Button.Click += new System.EventHandler(this.Refresh_Profile_Button_Click);
+            // 
             // ProfileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 774);
+            this.Controls.Add(this.Refresh_Profile_Button);
             this.Controls.Add(this.SeenIT_Logo);
             this.Controls.Add(this.Leaderboard_Placement_Label);
             this.Controls.Add(this.Global_Leaderboard_Placement_Label_Ignore);
@@ -305,5 +322,6 @@
         private System.Windows.Forms.Label Global_Leaderboard_Placement_Label_Ignore;
         private System.Windows.Forms.Label Leaderboard_Placement_Label;
         private System.Windows.Forms.PictureBox SeenIT_Logo;
+        private System.Windows.Forms.Button Refresh_Profile_Button;
     }
 }

@@ -278,6 +278,7 @@ namespace SeenITMovieTV.Database
 
                     //Once the user has been created store their Id in the application ready to be used.
                     UserId = (Int32)command.ExecuteScalar();
+                    GetUserLogin(UserName);
                 }
 
                 if (UserId != 0)

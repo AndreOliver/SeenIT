@@ -240,5 +240,11 @@ namespace SeenITMovieTV.Views
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
+
+        private void Refresh_Profile_Button_Click(object sender, EventArgs e)
+        {
+            User_Name_Label.Text = DataConnection.UserName;
+            GetWatchedMovieSeries();
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace SeenITMovieTV.ViewModels
             if (ControlAdded == false)
             {
                 SummaryFormHandle.Controls.Add(ucMovieSeriesInfoHandle);
-                SummaryFormHandle.Controls[3].Location = new System.Drawing.Point(0, 120);
+                SummaryFormHandle.Controls[4].Location = new System.Drawing.Point(0, 120);
                 ControlAdded = true;
             }
         }
