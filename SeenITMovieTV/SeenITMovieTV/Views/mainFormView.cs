@@ -46,6 +46,7 @@ namespace SeenITMovieTV
 
         private void Search_Filter_Button_Click(object sender, EventArgs e)
         {
+            HideWelcomeMessage();
             Reset_Thumbails();
             GuiCursor.WaitCursor(() => { AllMoviesOrSeriesList = MainFormViewModel.SearchClicked(SearchTextBox.Text); });
             UpdateThumbnails();

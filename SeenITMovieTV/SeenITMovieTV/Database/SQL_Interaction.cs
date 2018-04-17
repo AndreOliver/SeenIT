@@ -297,6 +297,83 @@ namespace SeenITMovieTV.Database
             }
         }
 
+        public void RemoveFromWatched(string MovieSeriesName)
+        {
+            GetMovieToRemoveId();
+
+            RemoveFromMovieTable();
+            RemoveFromUserAssociationTable();
+            RemoveFromGenreTable();
+        }
+
+        private void GetMovieToRemoveId()
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
+            string query = "SELECT m.Id FROM MovieSeriesTable m WHERE m.Id in (SELECT umt.MovieSeriesId from UserMovieAssociationTable umt WHERE umt.UserId = '" + UserId + "')";
+
+            using (this.SqlCon = new SqlConnection(ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, SqlCon))
+            {
+                SqlCon.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            MovieId = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void RemoveFromMovieTable()
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
+            string query = "DELETE FROM MovieSeriesTable WHERE Id = '"+MovieId+"' AND Id in (SELECT umt.MovieSeriesId from UserMovieAssociationTable umt WHERE umt.UserId = '"+UserId+"')";
+
+            using (this.SqlCon = new SqlConnection(ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, SqlCon))
+            {
+                SqlCon.Open();
+
+                int rowsDeleted = command.ExecuteNonQuery();
+            }
+        }
+
+        private void RemoveFromGenreTable()
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
+            string query = "DELETE FROM MovieGenreAssociationTable WHERE MovieId = '" + MovieId + "'";
+
+            using (this.SqlCon = new SqlConnection(ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, SqlCon))
+            {
+                SqlCon.Open();
+
+                int rowsDeleted = command.ExecuteNonQuery();
+            }         
+        }
+
+        private void RemoveFromUserAssociationTable()
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
+            string query = "DELETE FROM UserMovieAssociationTable WHERE MovieSeriesId = '"+MovieId+"'AND UserId = '"+UserId+"'";
+
+            using (this.SqlCon = new SqlConnection(ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, SqlCon))
+            {
+                SqlCon.Open();
+
+                int rowsDeleted = command.ExecuteNonQuery();
+            }
+        }
+
         /// <summary>
         /// Returns the highest Movie / Series from the database in the form of a list.
         /// </summary>
@@ -461,8 +538,7 @@ namespace SeenITMovieTV.Database
 
                     command.ExecuteNonQuery();
                 }
-            }
-            
+            }          
         }
 
         /// <summary>

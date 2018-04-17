@@ -305,8 +305,9 @@ namespace SeenITMovieTV.UserControls
 
         private void Remove_From_Watched_Click(object sender, EventArgs e)
         {
-            //TODO: Implement a remove from database function.
-            MessageBox.Show("TA DA");
+            databaseConnection.RemoveFromWatched(MovieSeriesName);
+
+            MessageBox.Show("Sucessfully Removed Movie/Series: " + MovieSeriesName);
         }
 
         /// <summary>

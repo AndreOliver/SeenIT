@@ -243,7 +243,9 @@ namespace SeenITMovieTV.Views
 
         private void Refresh_Profile_Button_Click(object sender, EventArgs e)
         {
-            User_Name_Label.Text = DataConnection.UserName;
+            SetUserNameTitle = DataConnection.UserName;
+            Runtime_Total_Label.Text = (DataConnection.GetTotalRunTime().ToString() + "Hours");
+            GetTopMovie();
             GetWatchedMovieSeries();
         }
     }
