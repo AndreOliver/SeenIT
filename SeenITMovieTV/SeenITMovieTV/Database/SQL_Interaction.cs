@@ -187,12 +187,12 @@ namespace SeenITMovieTV.Database
         /// <param name="UserName"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        public bool GetUserLogin(string UserName)
+        public bool GetUserLogin(string UserName, string Password)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
 
             //This query will check for an Id matching the user credentials that are provided.
-            string query = "SELECT u.Id, u.Name FROM UserTable u WHERE u.Name = '"+UserName+"'";
+            string query = "SELECT u.Id, u.Name FROM UserTable u WHERE u.Name = '"+UserName+"' AND u.Password = '"+Password+"'";
 
             using (this.SqlCon = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, SqlCon))
@@ -218,6 +218,46 @@ namespace SeenITMovieTV.Database
                 return true;
             }
         
+            //If the value is still 0 then return false as no user has been found.
+            return false;
+        }
+
+        /// <summary>
+        /// Overload for checking if a username already exists.
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <returns></returns>
+        public bool GetUserLogin(string UserName)
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["SeenITMovieTV.Database.SeenITDatabase"].ConnectionString;
+
+            //This query will check for an Id matching the user credentials that are provided.
+            string query = "SELECT u.Id, u.Name FROM UserTable u WHERE u.Name = '" + UserName + "'";
+
+            using (this.SqlCon = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, SqlCon))
+            {
+                SqlCon.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            //If found then the ID is stored in the private variable and so is the users Name.
+                            UserId = reader.GetInt32(0);
+                            this.UserName = reader.GetString(1);
+                        }
+                    }
+                }
+            }
+
+            //As Ids begin at 1, if this value is not 0 then a user has been found so return true.
+            if (UserId != 0)
+            {
+                return true;
+            }
+
             //If the value is still 0 then return false as no user has been found.
             return false;
         }
