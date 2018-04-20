@@ -99,6 +99,7 @@ C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Relea
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.Views.MovieSeriesSummaryFormView.resources
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.Views.ProfileView.resources
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.Views.WatchNowView.resources
-C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.csproj.GenerateResource.Cache
+C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.csproj.GenerateResource.cache
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.csproj.CoreCompileInputs.cache
+C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.csproj.CopyComplete
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Release\SeenITMovieTV.exe

@@ -317,3 +317,4 @@ C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Debug
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Debug\SeenITMovieTV.csproj.CoreCompileInputs.cache
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Debug\SeenITMovieTV.exe
 C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Debug\SeenITMovieTV.pdb
+C:\Users\Aaron\Documents\GitHub\SeenIT\SeenITMovieTV\SeenITMovieTV\obj\x64\Debug\SeenITMovieTV.csproj.CopyComplete

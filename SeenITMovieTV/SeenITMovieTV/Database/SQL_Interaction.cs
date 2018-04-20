@@ -279,8 +279,8 @@ namespace SeenITMovieTV.Database
                     {
                         while (reader.Read())
                         {
-                            Details[0] = reader.GetString(0);
-                            Details[1] = reader.GetString(1);
+                            Details.Add(reader.GetString(0));
+                            Details.Add(reader.GetString(1));
                         }
                     }
                 }
